@@ -1,3 +1,4 @@
+var tasks = {}
 var presentHour = moment().hours();
 var hourNine = document.getElementById('9')
 var hourTen = document.getElementById('10')
@@ -9,6 +10,15 @@ var hourFifteen = document.getElementById('15')
 var hourSixteen = document.getElementById('16')
 var hourSeventeen = document.getElementById('17')
 // Add ability to click into form and create then save tasks
+tasks;
+
+var tasks = function() {
+    localStorage.getItem('todos') || [];
+}
+function saveTasks() {
+    localStorage.setItem('todos',tasks);
+}
+
 $('#task').on('click',function(taskText) {
     var addTask = $('<input>')
         .text(taskText)
@@ -40,13 +50,4 @@ function timeAudit() {
     })
 }
 timeAudit()
-    
 
-var saveTasks = function() {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-}
-
-var loadTasks = function() {
-    tasks = JSON.parse(localStorage.getItem("tasks"));
-
-}
