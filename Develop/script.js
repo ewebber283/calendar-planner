@@ -1,13 +1,13 @@
 var presentHour = moment().hours();
-var hourNine = document.getElementById('nine')
-var hourTen = document.getElementById('ten')
-var hourEleven = document.getElementById('eleven')
-var hourTwelve = document.getElementById('twelve')
-var hourThirteen = document.getElementById('thirteen')
-var hourFourteen = document.getElementById('fourteen')
-var hourFifteen = document.getElementById('fifteen')
-var hourSixteen = document.getElementById('sixteen')
-var hourSeventeen = document.getElementById('seventeen')
+var hourNine = document.getElementById('9')
+var hourTen = document.getElementById('10')
+var hourEleven = document.getElementById('11')
+var hourTwelve = document.getElementById('12')
+var hourThirteen = document.getElementById('13')
+var hourFourteen = document.getElementById('14')
+var hourFifteen = document.getElementById('15')
+var hourSixteen = document.getElementById('16')
+var hourSeventeen = document.getElementById('17')
 // Add ability to click into form and create then save tasks
 $('#task').on('click',function(taskText) {
     var addTask = $('<input>')
@@ -42,7 +42,7 @@ function timeAudit() {
 timeAudit()
     
 
-/* var saveTasks = function() {
+var saveTasks = function() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
@@ -50,4 +50,3 @@ var loadTasks = function() {
     tasks = JSON.parse(localStorage.getItem("tasks"));
 
 }
-*/
