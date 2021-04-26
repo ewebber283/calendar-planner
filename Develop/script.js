@@ -1,4 +1,4 @@
-var presentHour = moment().hour();
+var presentHour = moment().hours();
 var hourNine = document.getElementById('nine')
 var hourTen = document.getElementById('ten')
 var hourEleven = document.getElementById('eleven')
@@ -27,11 +27,22 @@ getDate();
 
 // Add changing colors depending on where time block is 
 function timeAudit() {
+    var time = $('.row');
+    time.each(function() {
+        var currentHour = parseInt($(this).attr('id'))
+        if(currentHour < presentHour) {
+            $(this).addClass('past')
+        } else if (currentHour > presentHour) {
+            $(this).addClass('future')
+        } else {
+            $(this).addClass('present')
+        }
+    })
 }
 timeAudit()
     
 
-var saveTasks = function() {
+/* var saveTasks = function() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
@@ -39,4 +50,4 @@ var loadTasks = function() {
     tasks = JSON.parse(localStorage.getItem("tasks"));
 
 }
-
+*/
